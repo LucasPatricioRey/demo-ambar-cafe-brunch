@@ -1,3 +1,5 @@
+import type { ImageKey } from './data/images'
+
 export type Category =
   | 'Cafes'
   | 'Desayunos'
@@ -34,6 +36,7 @@ export interface Product {
   featured?: boolean
   popular?: boolean
   visual: VisualTone
+  image?: ImageKey
 }
 
 export interface CartItem {
@@ -50,14 +53,16 @@ export interface Promo {
   productId?: string
   tag: string
   visual: VisualTone
+  image?: ImageKey
 }
 
 export interface GalleryItem {
   id: string
   title: string
-  filter: 'Platos' | 'Cafe' | 'Ambiente' | 'Brunch' | 'Dulce'
+  filter: 'Platos' | 'Cafe' | 'Ambiente' | 'Brunch' | 'Dulce' | 'Pedidos'
   caption: string
   visual: VisualTone
+  image?: ImageKey
 }
 
 export interface ReservationForm {

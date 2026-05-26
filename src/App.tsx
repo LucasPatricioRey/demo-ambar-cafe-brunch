@@ -42,6 +42,7 @@ import {
   promos,
   testimonials,
 } from './data/content'
+import { imageAssets, type ImageKey } from './data/images'
 import type { CartItem, Category, GalleryItem, Product, ReservationForm, ServiceMode, VisualTone } from './types'
 import { formatCurrency, normalizeText } from './utils/format'
 import { buildOrderMessage, buildReservationMessage, whatsappUrl } from './utils/whatsapp'
@@ -53,6 +54,7 @@ const galleryFilters: Array<GalleryItem['filter'] | 'Todos'> = [
   'Ambiente',
   'Brunch',
   'Dulce',
+  'Pedidos',
 ]
 
 const emptyReservation: ReservationForm = {
@@ -287,6 +289,7 @@ function App() {
         />
         <OrderExperience onCartOpen={() => setCartOpen(true)} />
         <QrSection />
+        <ExperienceSection />
         <FeaturedSection products={featuredProducts} onAdd={addProductAndOpenCart} onDetail={openProduct} />
         <PromosSection onAddPromo={addPromo} />
         <ReservationSection
@@ -467,7 +470,7 @@ function Hero({ onCartOpen }: { onCartOpen: () => void }) {
 
       <div className="hero-visual" aria-label="Mesa de brunch premium con celular y menú digital">
         <div className="hero-plate hero-plate--main">
-          <VisualPlaceholder tone="brunch" label="Placeholder editorial de mesa brunch premium" />
+          <AssetImage image="heroCafe" tone="brunch" priority />
         </div>
         <div className="phone-mockup">
           <div className="phone-notch" />
@@ -476,14 +479,14 @@ function Hero({ onCartOpen }: { onCartOpen: () => void }) {
             <QrCode aria-hidden="true" />
           </div>
           <div className="phone-card">
-            <VisualPlaceholder tone="toast" label="Placeholder de avocado toast en menú mobile" compact />
+            <AssetImage image="avocadoToast" tone="toast" compact />
             <div>
               <strong>Avocado Toast</strong>
               <span>$ 8.900</span>
             </div>
           </div>
           <div className="phone-card">
-            <VisualPlaceholder tone="coffee" label="Placeholder de flat white en menú mobile" compact />
+            <AssetImage image="cafeDestacado" tone="coffee" compact />
             <div>
               <strong>Flat White</strong>
               <span>$ 3.900</span>
@@ -613,7 +616,7 @@ function ProductCard({
   return (
     <article className="product-card">
       <button className="product-media" type="button" onClick={onDetail}>
-        <VisualPlaceholder tone={product.visual} label={`Placeholder de ${product.name}`} />
+        <AssetImage image={product.image} tone={product.visual} fallbackLabel={`Foto de ${product.name}`} />
         {product.badge ? <span className="badge">{product.badge}</span> : null}
       </button>
       <div className="product-body">
@@ -680,13 +683,15 @@ function QrSection() {
   return (
     <section className="section qr-section">
       <div className="qr-mock">
-        <div className="table-mock">
-          <div className="qr-card" aria-label="Placeholder de código QR de mesa">
+        <div className="qr-photo-card">
+          <AssetImage image="menuQrMesa" tone="promo" />
+          <div className="qr-floating-card">
             <QrCode aria-hidden="true" />
-            <span>Ámbar QR</span>
+            <div>
+              <strong>Menú QR activo</strong>
+              <span>Escaneá y pedí por WhatsApp</span>
+            </div>
           </div>
-          <VisualPlaceholder tone="coffee" label="Placeholder de café sobre mesa cálida" compact />
-          <VisualPlaceholder tone="sweet" label="Placeholder de pastelería sobre mesa" compact />
         </div>
       </div>
       <div>
@@ -696,12 +701,39 @@ function QrSection() {
         </span>
         <h2>Escaneá, elegí y pedí sin esperas.</h2>
         <p>
-          Una experiencia pensada para mesas ocupadas, take away y clientes que deciden rápido desde el celular.
+          Ideal para mesas, take away y delivery: el cliente escanea el QR, elige desde el menú, agrega al pedido y envía todo por WhatsApp.
         </p>
         <div className="qr-steps">
-          <span>QR en mesa</span>
-          <span>Menú mobile</span>
-          <span>WhatsApp armado</span>
+          <span>Escaneá el QR</span>
+          <span>Elegí del menú</span>
+          <span>Agregá al pedido</span>
+          <span>Enviá por WhatsApp</span>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ExperienceSection() {
+  return (
+    <section className="section experience-section">
+      <div className="experience-gallery" aria-label="Equipo y experiencia de Ámbar Café">
+        <AssetImage image="baristaCafe" tone="coffee" />
+        <AssetImage image="staffAtencion" tone="brunch" />
+      </div>
+      <div>
+        <span className="eyebrow">
+          <Coffee aria-hidden="true" />
+          Equipo y experiencia
+        </span>
+        <h2>Café bien preparado y atención que acompaña la visita.</h2>
+        <p>
+          Las fotos finales muestran un local realista: barista en acción, servicio en mesa y una experiencia pensada para que la demo sea fácil de vender en una reunión.
+        </p>
+        <div className="experience-points">
+          <span>Barra de especialidad</span>
+          <span>Atención en mesa</span>
+          <span>Reservas de brunch</span>
         </div>
       </div>
     </section>
@@ -732,7 +764,7 @@ function FeaturedSection({
       <div className="featured-grid">
         {featured.map((product) => (
           <article className="featured-card" key={product.id}>
-            <VisualPlaceholder tone={product.visual} label={`Placeholder destacado de ${product.name}`} />
+            <AssetImage image={product.image} tone={product.visual} fallbackLabel={`Foto destacada de ${product.name}`} />
             <div>
               <span>{product.badge ?? categoryLabels[product.category]}</span>
               <h3>{product.name}</h3>
@@ -773,7 +805,7 @@ function PromosSection({ onAddPromo }: { onAddPromo: (productId?: string) => voi
         {promos.map((promo) => (
           <article className="promo-card" key={promo.id}>
             <div className="promo-card__visual">
-              <VisualPlaceholder tone={promo.visual} label={`Placeholder de ${promo.title}`} compact />
+              <AssetImage image={promo.image} tone={promo.visual} fallbackLabel={`Foto de ${promo.title}`} />
               <span>{promo.tag}</span>
             </div>
             <div>
@@ -908,7 +940,7 @@ function GallerySection({
         </span>
         <div>
           <h2>Una marca que se reconoce antes del primer café.</h2>
-          <p>Espacios reservados para fotos finales de local, platos, barra, mesas y packaging.</p>
+          <p>Fotos reales integradas para mostrar local, barra, platos, QR y experiencia social desde el celular.</p>
         </div>
       </div>
       <div className="category-scroll" aria-label="Filtros de galería">
@@ -926,7 +958,7 @@ function GallerySection({
       <div className="gallery-grid">
         {items.map((item) => (
           <article className="gallery-card" key={item.id}>
-            <VisualPlaceholder tone={item.visual} label={`Placeholder de galería: ${item.title}`} />
+            <AssetImage image={item.image} tone={item.visual} fallbackLabel={`Foto de galería: ${item.title}`} />
             <div>
               <span>{item.filter === 'Cafe' ? 'Café' : item.filter}</span>
               <h3>{item.title}</h3>
@@ -1043,8 +1075,8 @@ function LocationSection() {
           Cómo llegar
         </a>
       </div>
-      <div className="map-card" aria-label="Mapa ilustrativo de Palermo Soho">
-        <div className="map-grid" />
+      <div className="map-card location-photo-card" aria-label="Fachada de Ámbar Café & Brunch">
+        <AssetImage image="fachadaCafe" tone="coffee" />
         <div className="map-pin">
           <MapPin aria-hidden="true" />
           <span>{BRAND.shortName}</span>
@@ -1223,7 +1255,7 @@ function CartDrawer({
           ) : (
             items.map((item, index) => (
               <article className="cart-item" key={`${item.product.id}-${index}`}>
-                <VisualPlaceholder tone={item.product.visual} label={`Miniatura de ${item.product.name}`} compact />
+                <AssetImage image={item.product.image} tone={item.product.visual} fallbackLabel={`Miniatura de ${item.product.name}`} compact />
                 <div className="cart-item__body">
                   <div>
                     <h3>{item.product.name}</h3>
@@ -1350,7 +1382,7 @@ function ProductModal({
         <button className="icon-button modal-close" type="button" onClick={onClose} aria-label="Cerrar detalle">
           <X aria-hidden="true" />
         </button>
-        <VisualPlaceholder tone={product.visual} label={`Placeholder grande de ${product.name}`} />
+        <AssetImage image={product.image} tone={product.visual} fallbackLabel={`Foto grande de ${product.name}`} />
         <div className="product-modal__content">
           <span className="product-category">{categoryLabels[product.category]}</span>
           <h2 id="product-modal-title">{product.name}</h2>
@@ -1382,6 +1414,47 @@ function ProductModal({
           </button>
         </div>
       </article>
+    </div>
+  )
+}
+
+function AssetImage({
+  compact = false,
+  fallbackLabel,
+  image,
+  priority = false,
+  tone,
+}: {
+  compact?: boolean
+  fallbackLabel?: string
+  image?: ImageKey
+  priority?: boolean
+  tone: VisualTone
+}) {
+  if (!image) {
+    return (
+      <VisualPlaceholder
+        compact={compact}
+        tone={tone}
+        label={fallbackLabel ?? 'Visual pendiente'}
+      />
+    )
+  }
+
+  const asset = imageAssets[image]
+
+  return (
+    <div className={`asset-frame asset-frame--${tone} ${compact ? 'asset-frame--compact' : ''}`}>
+      <img
+        src={asset.src}
+        alt={asset.alt}
+        width={asset.width}
+        height={asset.height}
+        loading={priority ? 'eager' : 'lazy'}
+        decoding={priority ? 'sync' : 'async'}
+        fetchPriority={priority ? 'high' : 'auto'}
+        style={{ objectPosition: asset.position ?? 'center' }}
+      />
     </div>
   )
 }

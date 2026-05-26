@@ -14,6 +14,8 @@
 
 Presentarla desde un celular. El argumento principal es simple: el cliente escanea un QR, entiende la carta, arma su pedido y lo manda por WhatsApp sin fricción.
 
+Esta versión ya tiene visuales finales integrados, por lo que es apta para mostrar como referencia comercial sin explicar placeholders. Para un cliente real, las imágenes se reemplazan por fotos del negocio, sus productos y su equipo.
+
 En la reunión conviene mostrar este recorrido:
 
 1. Hero y marca: cómo el local se ve premium desde el primer segundo.

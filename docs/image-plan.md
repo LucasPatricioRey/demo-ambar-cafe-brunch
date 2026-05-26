@@ -1,137 +1,114 @@
-# Lista de imágenes necesarias
+# Plan de imágenes
 
-- IMG-01 Hero principal
-  - Sección: Hero
-  - Mostrar: mesa de brunch premium con café, avocado toast, pancakes y ambiente cálido de cafetería moderna.
-  - Estilo: editorial gastronómico, luz natural cálida, Palermo Soho, mesa de madera, look aspiracional.
-  - Orientación: vertical/horizontal flexible para composición responsive.
-  - Tamaño sugerido: 1600x1200.
+La demo ya tiene integradas las 15 imágenes finales entregadas. Los PNG originales están en `src/assets/images/` y la app usa versiones JPG optimizadas locales para performance. El mapeo técnico está centralizado en `src/data/images.ts`.
+
+## Imágenes integradas
+
+- IMG-01 `01-hero-cafeteria.png`
+  - Estado: integrada.
+  - Uso principal: hero principal.
+  - Uso secundario: refuerzo visual de marca y experiencia brunch.
+  - Versión renderizada: `01-hero-cafeteria.jpg`.
   - Prioridad: alta.
 
-- IMG-02 Mockup menú en celular
-  - Sección: Hero / QR
-  - Mostrar: mano usando celular con menú digital de cafetería y productos visibles.
-  - Estilo: realista premium, foco en UI mobile, fondo de mesa de café.
-  - Orientación: vertical.
-  - Tamaño sugerido: 1200x1600.
+- IMG-02 `02-interior-local.png`
+  - Estado: integrada.
+  - Uso: galería, ambiente del local.
+  - Versión renderizada: `02-interior-local.jpg`.
   - Prioridad: alta.
 
-- IMG-03 Flat White
-  - Sección: Menú / destacados
-  - Mostrar: taza de flat white con latte art sobre plato pequeño.
-  - Estilo: minimal premium, luz suave, fondo cálido.
-  - Orientación: cuadrada.
-  - Tamaño sugerido: 1200x1200.
+- IMG-03 `03-fachada-cafeteria.png`
+  - Estado: integrada.
+  - Uso: ubicación/contacto y galería.
+  - Versión renderizada: `03-fachada-cafeteria.jpg`.
   - Prioridad: alta.
 
-- IMG-04 Cappuccino Ámbar
-  - Sección: Menú
-  - Mostrar: cappuccino con cacao, toque de naranja y vajilla artesanal.
-  - Estilo: cálido, cercano, cafetería de especialidad.
-  - Orientación: cuadrada.
-  - Tamaño sugerido: 1200x1200.
+- IMG-04 `04-cafe-destacado.png`
+  - Estado: integrada.
+  - Uso: Flat White, Cappuccino Ámbar, cafés de especialidad, promo Happy Coffee y galería.
+  - Versión renderizada: `04-cafe-destacado.jpg`.
+  - Prioridad: alta.
+
+- IMG-05 `05-avocado-toast.png`
+  - Estado: integrada.
+  - Uso: Avocado Toast, Huevos Benedictinos como referencia visual de tostada brunch, destacados y galería.
+  - Versión renderizada: `05-avocado-toast.jpg`.
+  - Prioridad: alta.
+
+- IMG-06 `06-pancakes-waffles.png`
+  - Estado: integrada.
+  - Uso: Pancakes con frutos rojos, destacados, galería dulce.
+  - Versión renderizada: `06-pancakes-waffles.jpg`.
+  - Prioridad: alta.
+
+- IMG-07 `07-sandwich-burger-premium.png`
+  - Estado: integrada.
+  - Uso: Sándwich brunch premium y sándwiches del menú.
+  - Versión renderizada: `07-sandwich-burger-premium.jpg`.
   - Prioridad: media.
 
-- IMG-05 Avocado Toast
-  - Sección: Menú / destacados
-  - Mostrar: tostada de masa madre con palta, huevo poché, semillas y lima.
-  - Estilo: brunch premium, plato muy apetecible, colores frescos.
-  - Orientación: cuadrada.
-  - Tamaño sugerido: 1200x1200.
-  - Prioridad: alta.
-
-- IMG-06 Huevos Benedictinos
-  - Sección: Menú / destacados
-  - Mostrar: huevos benedictinos con salsa holandesa, panceta y hojas verdes.
-  - Estilo: editorial gastronómico, plato protagonista.
-  - Orientación: cuadrada.
-  - Tamaño sugerido: 1200x1200.
-  - Prioridad: alta.
-
-- IMG-07 Pancakes con frutos rojos
-  - Sección: Menú / destacados
-  - Mostrar: torre de pancakes con frutos rojos, crema y miel.
-  - Estilo: instagrameable, luz natural, textura apetitosa.
-  - Orientación: cuadrada.
-  - Tamaño sugerido: 1200x1200.
-  - Prioridad: alta.
-
-- IMG-08 Brunch para dos
-  - Sección: Promos / destacados
-  - Mostrar: mesa completa para dos con cafés, jugos, tostadas, pancakes y pastelería.
-  - Estilo: abundante pero ordenado, premium, social.
-  - Orientación: horizontal.
-  - Tamaño sugerido: 1600x1000.
-  - Prioridad: alta.
-
-- IMG-09 Tostado premium
-  - Sección: Menú
-  - Mostrar: tostado de jamón y queso en pan brioche, cortado y con queso fundido.
-  - Estilo: comfort premium, fondo simple.
-  - Orientación: cuadrada.
-  - Tamaño sugerido: 1200x1200.
+- IMG-08 `08-pasteleria-croissant.png`
+  - Estado: integrada.
+  - Uso: Croissant artesanal, pastelería, promo café + croissant.
+  - Versión renderizada: `08-pasteleria-croissant.jpg`.
   - Prioridad: media.
 
-- IMG-10 Bowl de yogur y granola
-  - Sección: Menú
-  - Mostrar: bowl con yogur, granola, fruta fresca, miel y semillas.
-  - Estilo: fresco, saludable, colores claros.
-  - Orientación: cuadrada.
-  - Tamaño sugerido: 1200x1200.
+- IMG-09 `09-combo-desayuno.png`
+  - Estado: integrada.
+  - Uso: Combo desayuno Ámbar, bebidas frías, bowls y promo desayuno.
+  - Versión renderizada: `09-combo-desayuno.jpg`.
   - Prioridad: media.
 
-- IMG-11 Croissant relleno
-  - Sección: Menú / promos
-  - Mostrar: croissant de manteca relleno con crema de almendras.
-  - Estilo: pastelería artesanal, textura crocante, luz cálida.
-  - Orientación: cuadrada.
-  - Tamaño sugerido: 1200x1200.
-  - Prioridad: media.
-
-- IMG-12 Cheesecake vasco
-  - Sección: Menú / destacados
-  - Mostrar: porción de cheesecake vasco con coulis de frutos rojos.
-  - Estilo: postre premium, plato limpio, fondo editorial.
-  - Orientación: cuadrada.
-  - Tamaño sugerido: 1200x1200.
-  - Prioridad: media.
-
-- IMG-13 Cold Brew Tonic
-  - Sección: Menú / promos
-  - Mostrar: vaso alto con cold brew tonic, hielo claro y cítrico.
-  - Estilo: refrescante, moderno, contraste café/cítrico.
-  - Orientación: vertical.
-  - Tamaño sugerido: 1000x1400.
-  - Prioridad: media.
-
-- IMG-14 Barra de café
-  - Sección: Galería / ambiente
-  - Mostrar: barra de cafetería de especialidad con máquina espresso, madera y luz cálida.
-  - Estilo: local moderno, premium, realista.
-  - Orientación: horizontal.
-  - Tamaño sugerido: 1600x1000.
+- IMG-10 `10-brunch-para-dos.png`
+  - Estado: integrada.
+  - Uso: Brunch para dos, destacados, promos y productos de brunch abundante.
+  - Versión renderizada: `10-brunch-para-dos.jpg`.
   - Prioridad: alta.
 
-- IMG-15 Ambiente del local
-  - Sección: Galería / ubicación
-  - Mostrar: mesas, sillas, plantas, personas tomando brunch sin rostros protagonistas.
-  - Estilo: Palermo Soho, cálido, aspiracional, natural.
-  - Orientación: horizontal.
-  - Tamaño sugerido: 1600x1000.
-  - Prioridad: alta.
-
-- IMG-16 Mesa con QR
-  - Sección: QR
-  - Mostrar: tarjeta QR sobre mesa con café y plato al costado.
-  - Estilo: comercial, claro, fácil de entender, foco en el QR.
-  - Orientación: horizontal.
-  - Tamaño sugerido: 1600x1000.
-  - Prioridad: alta.
-
-- IMG-17 Packaging take away
-  - Sección: Galería / pedidos
-  - Mostrar: bolsa, vaso take away, caja de pastelería y sticker de marca Ámbar.
-  - Estilo: branding premium, ordenado, colores de la identidad.
-  - Orientación: cuadrada.
-  - Tamaño sugerido: 1200x1200.
+- IMG-11 `11-postre-premium.png`
+  - Estado: integrada.
+  - Uso: Postre premium de chocolate, postres, merienda premium y galería dulce.
+  - Versión renderizada: `11-postre-premium.jpg`.
   - Prioridad: media.
+
+- IMG-12 `12-barista-preparando-cafe.png`
+  - Estado: integrada.
+  - Uso: sección equipo/experiencia y galería café.
+  - Versión renderizada: `12-barista-preparando-cafe.jpg`.
+  - Prioridad: alta.
+
+- IMG-13 `13-staff-atencion-cafeteria.png`
+  - Estado: integrada.
+  - Uso: sección equipo/experiencia, atención y galería ambiente.
+  - Versión renderizada: `13-staff-atencion-cafeteria.jpg`.
+  - Prioridad: media.
+
+- IMG-14 `14-menu-qr-mesa.png`
+  - Estado: integrada.
+  - Uso principal: sección QR.
+  - Uso secundario: galería, pedidos/QR.
+  - Versión renderizada: `14-menu-qr-mesa.jpg`.
+  - Prioridad: alta.
+
+- IMG-15 `15-lifestyle-clientes-brunch.png`
+  - Estado: integrada.
+  - Uso: galería brunch, experiencia social y soporte visual de opiniones.
+  - Versión renderizada: `15-lifestyle-clientes-brunch.jpg`.
+  - Prioridad: alta.
+
+## Pendientes u opcionales
+
+- Packaging take away
+  - Estado: pendiente opcional.
+  - Motivo: no vino una imagen específica de packaging.
+  - Recomendación: generar foto cuadrada de bolsa, vaso take away, caja de pastelería y sticker de marca Ámbar.
+
+- Mockup de celular usando el menú digital
+  - Estado: pendiente opcional.
+  - Motivo: se resolvió con UI real dentro del hero y la foto de QR en mesa.
+  - Recomendación: generar una foto vertical de mano usando el menú mobile si se quiere una pieza más literal para venta.
+
+- Bebida fría específica
+  - Estado: pendiente opcional.
+  - Motivo: no vino una foto puntual de cold brew o limonada.
+  - Recomendación: generar una imagen vertical de vaso frío con café/cítrico para productos de bebidas frías.

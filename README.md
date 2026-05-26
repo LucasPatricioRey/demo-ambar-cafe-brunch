@@ -21,17 +21,29 @@ No hay backend, base de datos ni autenticación. La lógica de pedido y reserva 
 ## Funcionalidades
 
 - Navbar sticky con menú mobile.
-- Hero comercial con CTAs, señales de confianza y visual premium con placeholders.
-- Menú online con buscador, filtros por categoría y cards de productos.
+- Hero comercial con CTAs, señales de confianza e imagen real de cafetería/brunch.
+- Menú online con buscador, filtros por categoría y cards con imágenes locales.
 - Modal de detalle de producto con ingredientes, cantidad, notas y agregado al carrito.
 - Carrito lateral con cantidades, eliminación, notas por producto, nota general, subtotal y modalidad.
 - Modalidades: consumo en local, retiro y delivery con dirección.
 - Mensaje de pedido armado para WhatsApp.
 - Formulario de reservas con mensaje armado para WhatsApp.
-- Sección de menú digital QR.
+- Sección de menú digital QR con imagen real del QR en mesa.
+- Sección de equipo/experiencia con barista y atención en mesa.
 - Platos destacados, promos, galería, opiniones, cómo funciona, ubicación, FAQ y CTA final.
 - Footer con “Demo creada por Lucas Rey” y “Sitio demostrativo para presentación comercial.”
 - Metadata SEO, Open Graph básico y favicon.
+
+## Imágenes locales
+
+Los assets finales están en `src/assets/images/`.
+
+- Los `.png` son las imágenes originales recibidas.
+- Los `.jpg` son versiones optimizadas usadas por la app para mejorar performance.
+- El mapa central está en `src/data/images.ts`.
+- La relación entre productos, promos, galería y fotos se define en `src/data/content.ts`.
+
+Para adaptar la demo a un cliente real, reemplazar las imágenes manteniendo el mismo nombre de archivo o actualizar `src/data/images.ts`.
 
 ## Cómo correr localmente
 
@@ -50,7 +62,7 @@ npm run build
 
 1. Reemplazar nombre, logo textual, ubicación, horarios, Instagram y WhatsApp en `src/data/content.ts`.
 2. Cambiar categorías, productos, precios, ingredientes y promos en el mismo archivo.
-3. Reemplazar placeholders por imágenes reales o generadas según `docs/image-plan.md`.
+3. Reemplazar fotos del negocio en `src/assets/images/` y actualizar `src/data/images.ts` si cambian los nombres.
 4. Ajustar colores y tono de marca en `src/App.css`.
 5. Conectar pedidos reales, pagos, reservas o panel admin si el alcance comercial lo requiere.
 
@@ -61,7 +73,6 @@ npm run build
 - Las reservas no bloquean disponibilidad real.
 - Las reseñas, precios, dirección e Instagram son ficticios.
 - El QR es ilustrativo.
-- Las imágenes son placeholders de diseño, no fotos finales.
 
 ## Nota
 
