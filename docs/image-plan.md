@@ -2,6 +2,8 @@
 
 La demo ya tiene integradas las 15 imágenes finales entregadas. Los PNG originales están en `src/assets/images/` y la app usa versiones JPG optimizadas locales para performance. El mapeo técnico está centralizado en `src/data/images.ts`.
 
+Nota de catálogo: el menú de productos evita repetir fotos. Los productos que no tenían una imagen propia quedaron fuera del listado principal para que cada card tenga un asset único.
+
 ## Imágenes integradas
 
 - IMG-01 `01-hero-cafeteria.png`
@@ -25,13 +27,13 @@ La demo ya tiene integradas las 15 imágenes finales entregadas. Los PNG origina
 
 - IMG-04 `04-cafe-destacado.png`
   - Estado: integrada.
-  - Uso: Flat White, Cappuccino Ámbar, cafés de especialidad, promo Happy Coffee y galería.
+  - Uso: Flat White, cafés de especialidad, promo Happy Coffee y galería.
   - Versión renderizada: `04-cafe-destacado.jpg`.
   - Prioridad: alta.
 
 - IMG-05 `05-avocado-toast.png`
   - Estado: integrada.
-  - Uso: Avocado Toast, Huevos Benedictinos como referencia visual de tostada brunch, destacados y galería.
+  - Uso: Avocado Toast, destacados y galería.
   - Versión renderizada: `05-avocado-toast.jpg`.
   - Prioridad: alta.
 
@@ -43,7 +45,7 @@ La demo ya tiene integradas las 15 imágenes finales entregadas. Los PNG origina
 
 - IMG-07 `07-sandwich-burger-premium.png`
   - Estado: integrada.
-  - Uso: Sándwich brunch premium y sándwiches del menú.
+  - Uso: Sándwich brunch premium.
   - Versión renderizada: `07-sandwich-burger-premium.jpg`.
   - Prioridad: media.
 
@@ -55,13 +57,13 @@ La demo ya tiene integradas las 15 imágenes finales entregadas. Los PNG origina
 
 - IMG-09 `09-combo-desayuno.png`
   - Estado: integrada.
-  - Uso: Combo desayuno Ámbar, bebidas frías, bowls y promo desayuno.
+  - Uso: Combo desayuno Ámbar y promo desayuno.
   - Versión renderizada: `09-combo-desayuno.jpg`.
   - Prioridad: media.
 
 - IMG-10 `10-brunch-para-dos.png`
   - Estado: integrada.
-  - Uso: Brunch para dos, destacados, promos y productos de brunch abundante.
+  - Uso: Brunch para dos, destacados y promos.
   - Versión renderizada: `10-brunch-para-dos.jpg`.
   - Prioridad: alta.
 

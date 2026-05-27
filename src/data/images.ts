@@ -45,7 +45,7 @@ export const imageAssets: Record<ImageKey, ImageAsset> = {
     alt: 'Mesa de brunch premium en cafetería cálida con clientes tomando café',
     width: 1672,
     height: 941,
-    position: 'center',
+    position: '62% center',
   },
   interiorLocal: {
     src: interiorLocal,
