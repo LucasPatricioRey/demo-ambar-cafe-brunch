@@ -714,6 +714,26 @@ textarea:focus-visible {
   gap: 8px;
 }
 
+.product-card .product-footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.product-card .product-actions {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.product-card .product-actions .button {
+  width: 100%;
+  min-width: 0;
+  padding-inline: 10px;
+  white-space: nowrap;
+}
+
 .badge {
   position: absolute;
   top: 12px;
@@ -2068,6 +2088,14 @@ textarea {
 
   .trust-bar {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-card .product-actions {
+    grid-template-columns: 1fr;
   }
 
   .featured-grid,
